@@ -6,20 +6,128 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =====================================================
-     DARK MODE
+     ELEMENTS
   ===================================================== */
+
+  const body = document.body;
 
   const themeButton =
     document.getElementById("themeBtn");
 
+  const menuButton =
+    document.getElementById("menuBtn");
+
+  const navLinks =
+    document.querySelector(".nav-links");
+
+  const header =
+    document.querySelector(".site-header");
+
+  const projectImage =
+    document.getElementById("waikikiProjectImage");
+
+
+  /* =====================================================
+     PROJECT SCREENSHOTS
+  ===================================================== */
+
+  const lightProjectImage =
+    "assets/waikiki-market-light.jpg";
+
+  const darkProjectImage =
+    "assets/waikiki-market-dark.jpg";
+
+
+  /* =====================================================
+     PROJECT SCREENSHOT UPDATE
+  ===================================================== */
+
+  function updateProjectScreenshot() {
+
+    if (!projectImage) {
+      return;
+    }
+
+    const isDark =
+      body.classList.contains("dark");
+
+    const newImage =
+      isDark
+        ? darkProjectImage
+        : lightProjectImage;
+
+    const newAlt =
+      isDark
+        ? "Waikiki Market dark mode screenshot"
+        : "Waikiki Market light mode screenshot";
+
+
+    /* Avoid unnecessary image reload */
+
+    if (
+      projectImage.getAttribute("src") ===
+      newImage
+    ) {
+      projectImage.alt = newAlt;
+      return;
+    }
+
+
+    /* Fade image out */
+
+    projectImage.classList.add(
+      "image-changing"
+    );
+
+
+    setTimeout(() => {
+
+      projectImage.src = newImage;
+      projectImage.alt = newAlt;
+
+
+      projectImage.onload = () => {
+
+        projectImage.classList.remove(
+          "image-changing"
+        );
+
+      };
+
+
+    }, 150);
+
+  }
+
+
+  /* =====================================================
+     THEME
+  ===================================================== */
+
   const savedTheme =
-    localStorage.getItem("waikiki-portfolio-theme");
+    localStorage.getItem(
+      "waikiki-portfolio-theme"
+    );
+
+
+  /*
+     Restore saved theme
+  */
 
   if (savedTheme === "dark") {
 
-    document.body.classList.add("dark");
+    body.classList.add("dark");
+
+  } else if (savedTheme === "light") {
+
+    body.classList.remove("dark");
 
   }
+
+
+  /* =====================================================
+     THEME BUTTON
+  ===================================================== */
 
   function updateThemeButton() {
 
@@ -28,10 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const isDark =
-      document.body.classList.contains("dark");
+      body.classList.contains("dark");
+
 
     themeButton.textContent =
-      isDark ? "☀️" : "🌙";
+      isDark
+        ? "☀️"
+        : "🌙";
+
 
     themeButton.setAttribute(
       "aria-label",
@@ -40,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
         : "Switch to dark mode"
     );
 
+
     themeButton.setAttribute(
       "title",
       isDark
@@ -47,9 +160,26 @@ document.addEventListener("DOMContentLoaded", () => {
         : "Switch to dark mode"
     );
 
+
+    themeButton.setAttribute(
+      "aria-pressed",
+      isDark
+        ? "true"
+        : "false"
+    );
+
   }
 
+
+  /* Initial state */
+
   updateThemeButton();
+  updateProjectScreenshot();
+
+
+  /* =====================================================
+     THEME TOGGLE
+  ===================================================== */
 
   if (themeButton) {
 
@@ -57,19 +187,54 @@ document.addEventListener("DOMContentLoaded", () => {
       "click",
       () => {
 
-        document.body.classList.toggle("dark");
+        const willBeDark =
+          !body.classList.contains("dark");
 
-        const isDark =
-          document.body.classList.contains("dark");
+
+        /*
+          Small transition state
+        */
+
+        body.classList.add(
+          "theme-changing"
+        );
+
+
+        body.classList.toggle(
+          "dark",
+          willBeDark
+        );
+
 
         localStorage.setItem(
           "waikiki-portfolio-theme",
-          isDark
+          willBeDark
             ? "dark"
             : "light"
         );
 
+
         updateThemeButton();
+
+
+        /*
+          Update project screenshot
+        */
+
+        updateProjectScreenshot();
+
+
+        /*
+          Remove transition helper
+        */
+
+        setTimeout(() => {
+
+          body.classList.remove(
+            "theme-changing"
+          );
+
+        }, 350);
 
       }
     );
@@ -81,11 +246,65 @@ document.addEventListener("DOMContentLoaded", () => {
      MOBILE NAVIGATION
   ===================================================== */
 
-  const menuButton =
-    document.querySelector(".menu-btn");
+  function closeMobileMenu() {
 
-  const navLinks =
-    document.querySelector(".nav-links");
+    if (!navLinks || !menuButton) {
+      return;
+    }
+
+
+    navLinks.classList.remove(
+      "active"
+    );
+
+
+    menuButton.classList.remove(
+      "active"
+    );
+
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+
+    body.classList.remove(
+      "menu-open"
+    );
+
+  }
+
+
+  function openMobileMenu() {
+
+    if (!navLinks || !menuButton) {
+      return;
+    }
+
+
+    navLinks.classList.add(
+      "active"
+    );
+
+
+    menuButton.classList.add(
+      "active"
+    );
+
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+
+    body.classList.add(
+      "menu-open"
+    );
+
+  }
+
 
   if (menuButton && navLinks) {
 
@@ -93,12 +312,30 @@ document.addEventListener("DOMContentLoaded", () => {
       "click",
       () => {
 
-        navLinks.classList.toggle("active");
+        const isOpen =
+          navLinks.classList.contains(
+            "active"
+          );
 
-        menuButton.classList.toggle("active");
+
+        if (isOpen) {
+
+          closeMobileMenu();
+
+        } else {
+
+          openMobileMenu();
+
+        }
 
       }
     );
+
+
+    /*
+      Close menu when navigation
+      link is clicked
+    */
 
     navLinks
       .querySelectorAll("a")
@@ -108,13 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "click",
           () => {
 
-            navLinks.classList.remove(
-              "active"
-            );
-
-            menuButton.classList.remove(
-              "active"
-            );
+            closeMobileMenu();
 
           }
         );
@@ -125,11 +356,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =====================================================
+     CLOSE MENU ON RESIZE
+  ===================================================== */
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      if (
+        window.innerWidth > 800
+      ) {
+
+        closeMobileMenu();
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     ESCAPE KEY
+  ===================================================== */
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        closeMobileMenu();
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
      SMOOTH SCROLL
   ===================================================== */
 
   document
-    .querySelectorAll('a[href^="#"]')
+    .querySelectorAll(
+      'a[href^="#"]'
+    )
     .forEach(link => {
 
       link.addEventListener(
@@ -139,27 +412,59 @@ document.addEventListener("DOMContentLoaded", () => {
           const targetId =
             link.getAttribute("href");
 
+
           if (
             !targetId ||
             targetId === "#"
           ) {
+
             return;
+
           }
+
 
           const target =
             document.querySelector(
               targetId
             );
 
+
           if (!target) {
             return;
           }
 
+
           event.preventDefault();
 
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+
+          /*
+            Account for fixed header
+          */
+
+          const headerHeight =
+            header
+              ? header.offsetHeight
+              : 0;
+
+
+          const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight -
+            15;
+
+
+          window.scrollTo({
+
+            top:
+              Math.max(
+                0,
+                targetPosition
+              ),
+
+            behavior:
+              "smooth"
+
           });
 
         }
@@ -177,61 +482,93 @@ document.addEventListener("DOMContentLoaded", () => {
       "section[id]"
     );
 
+
   const navigationLinks =
     document.querySelectorAll(
       '.nav-links a[href^="#"]'
     );
 
+
   function updateActiveNavigation() {
+
+    if (!sections.length) {
+      return;
+    }
+
 
     let currentSection = "";
 
-    sections.forEach(section => {
 
-      const sectionTop =
-        section.offsetTop - 150;
+    const scrollPosition =
+      window.scrollY +
+      (header
+        ? header.offsetHeight
+        : 72) +
+      80;
 
-      const sectionHeight =
-        section.offsetHeight;
 
-      if (
-        window.scrollY >= sectionTop &&
-        window.scrollY <
-          sectionTop + sectionHeight
-      ) {
+    sections.forEach(
+      section => {
 
-        currentSection =
-          section.getAttribute("id");
+        const sectionTop =
+          section.offsetTop;
+
+        const sectionBottom =
+          sectionTop +
+          section.offsetHeight;
+
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionBottom
+        ) {
+
+          currentSection =
+            section.getAttribute(
+              "id"
+            );
+
+        }
 
       }
+    );
 
-    });
 
-    navigationLinks.forEach(link => {
+    navigationLinks.forEach(
+      link => {
 
-      link.classList.remove(
-        "active"
-      );
+        const href =
+          link.getAttribute(
+            "href"
+          );
 
-      if (
-        link.getAttribute("href") ===
-        `#${currentSection}`
-      ) {
 
-        link.classList.add(
-          "active"
+        link.classList.toggle(
+          "active",
+          href ===
+            `#${currentSection}`
         );
 
       }
-
-    });
+    );
 
   }
 
+
   window.addEventListener(
     "scroll",
+    updateActiveNavigation,
+    {
+      passive: true
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
     updateActiveNavigation
   );
+
 
   updateActiveNavigation();
 
@@ -242,8 +579,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealElements =
     document.querySelectorAll(
-      ".reveal, .project-card, .skill-card, .about-content"
+      `
+      .project-card,
+      .skill-card,
+      .workflow-item,
+      .stat-card,
+      .about-text,
+      .section-heading,
+      .contact-card
+      `
     );
+
 
   if (
     "IntersectionObserver" in window
@@ -253,36 +599,62 @@ document.addEventListener("DOMContentLoaded", () => {
       new IntersectionObserver(
         entries => {
 
-          entries.forEach(entry => {
+          entries.forEach(
+            entry => {
 
-            if (
-              entry.isIntersecting
-            ) {
+              if (
+                entry.isIntersecting
+              ) {
 
-              entry.target.classList.add(
-                "visible"
-              );
+                entry.target.classList.add(
+                  "visible"
+                );
 
-              revealObserver.unobserve(
-                entry.target
-              );
+
+                revealObserver.unobserve(
+                  entry.target
+                );
+
+              }
 
             }
-
-          });
+          );
 
         },
         {
-          threshold: 0.12
+          threshold: 0.12,
+          rootMargin:
+            "0px 0px -40px 0px"
         }
       );
 
+
     revealElements.forEach(
-      element => {
+      (element, index) => {
+
+        /*
+          Add reveal class only if
+          element does not already
+          have it.
+        */
 
         element.classList.add(
           "reveal"
         );
+
+
+        /*
+          Small stagger effect
+        */
+
+        element.style.setProperty(
+          "--reveal-delay",
+          `${Math.min(
+            index * 45,
+            300
+          )}ms`
+        );
+
 
         revealObserver.observe(
           element
@@ -310,16 +682,16 @@ document.addEventListener("DOMContentLoaded", () => {
      HEADER SCROLL EFFECT
   ===================================================== */
 
-  const header =
-    document.querySelector("header");
-
   function updateHeader() {
 
     if (!header) {
       return;
     }
 
-    if (window.scrollY > 30) {
+
+    if (
+      window.scrollY > 30
+    ) {
 
       header.classList.add(
         "scrolled"
@@ -335,10 +707,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+
   window.addEventListener(
     "scroll",
-    updateHeader
+    updateHeader,
+    {
+      passive: true
+    }
   );
+
 
   updateHeader();
 
@@ -352,8 +729,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "[data-current-year]"
     );
 
+
   const currentYear =
     new Date().getFullYear();
+
 
   yearElements.forEach(
     element => {
@@ -374,30 +753,31 @@ document.addEventListener("DOMContentLoaded", () => {
       ".back-to-top"
     );
 
+
   if (backToTop) {
 
     function updateBackToTop() {
 
-      if (window.scrollY > 500) {
+      const shouldShow =
+        window.scrollY > 500;
 
-        backToTop.classList.add(
-          "show"
-        );
 
-      } else {
-
-        backToTop.classList.remove(
-          "show"
-        );
-
-      }
+      backToTop.classList.toggle(
+        "show",
+        shouldShow
+      );
 
     }
 
+
     window.addEventListener(
       "scroll",
-      updateBackToTop
+      updateBackToTop,
+      {
+        passive: true
+      }
     );
+
 
     backToTop.addEventListener(
       "click",
@@ -405,13 +785,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         event.preventDefault();
 
+
         window.scrollTo({
+
           top: 0,
-          behavior: "smooth"
+
+          behavior:
+            "smooth"
+
         });
 
       }
     );
+
 
     updateBackToTop();
 
@@ -419,11 +805,101 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =====================================================
-     CONSOLE MESSAGE
+     IMAGE ERROR HANDLING
+  ===================================================== */
+
+  if (projectImage) {
+
+    projectImage.addEventListener(
+      "error",
+      () => {
+
+        projectImage.classList.remove(
+          "image-changing"
+        );
+
+
+        console.warn(
+          "⚠️ Waikiki Market screenshot could not be loaded:",
+          projectImage.src
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =====================================================
+     REDUCED MOTION
+  ===================================================== */
+
+  const prefersReducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+
+  function handleReducedMotion() {
+
+    if (
+      prefersReducedMotion.matches
+    ) {
+
+      body.classList.add(
+        "reduce-motion"
+      );
+
+    } else {
+
+      body.classList.remove(
+        "reduce-motion"
+      );
+
+    }
+
+  }
+
+
+  handleReducedMotion();
+
+
+  if (
+    prefersReducedMotion.addEventListener
+  ) {
+
+    prefersReducedMotion.addEventListener(
+      "change",
+      handleReducedMotion
+    );
+
+  }
+
+
+  /* =====================================================
+     INITIAL PAGE STATE
+  ===================================================== */
+
+  requestAnimationFrame(() => {
+
+    body.classList.add(
+      "page-loaded"
+    );
+
+  });
+
+
+  /* =====================================================
+     CONSOLE
   ===================================================== */
 
   console.log(
     "🚀 Waikiki Dev - Ace Portfolio loaded successfully."
+  );
+
+
+  console.log(
+    "🖼️ Waikiki Market light/dark screenshots enabled."
   );
 
 });
