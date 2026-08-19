@@ -1,1131 +1,855 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html>  <html lang="en">  
+<head>    <meta charset="UTF-8">  <meta  
+name="viewport"  
+content="width=device-width, initial-scale=1.0">
 
-  <!-- =====================================================
-       META
-  ====================================================== -->
+<meta  
+name="description"  
+content="Waikiki Dev — Ace. A personal portfolio showcasing front-end development, vibe coding, AI-assisted development, and creative web projects.">
 
-  <meta charset="UTF-8">
+<meta  
+name="author"  
+content="Waikiki Dev - Ace">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
+<meta  
+name="theme-color"  
+content="#0b0d10">
 
-  <meta
-    name="description"
-    content="Waikiki Dev — Ace. A personal portfolio showcasing front-end development, vibe coding, AI-assisted development, and creative web projects.">
+  <title>Waikiki Dev — Ace | Front-End Developer</title>    <link  
+    rel="stylesheet"  
+    href="css/style.css">  </head>  <body>    <!-- =====================================================  
+       HEADER  
+  ====================================================== -->    <header class="site-header">  <nav class="navbar">  
 
-  <meta
-    name="author"
-    content="Waikiki Dev - Ace">
+  <a  
+    href="#home"  
+    class="logo"  
+    aria-label="Waikiki Dev home">  
 
-  <meta
-    name="theme-color"
-    content="#0b0d10">
+    Waikiki<span>Dev</span>  
 
+  </a>  
 
-  <!-- =====================================================
-       TITLE
-  ====================================================== -->
+  <div class="nav-links">  
 
-  <title>Waikiki Dev — Ace | Front-End Developer</title>
+    <a href="#home">Home</a>  
+    <a href="#about">About</a>  
+    <a href="#projects">Projects</a>  
+    <a href="#skills">Skills</a>  
+    <a href="#contact">Contact</a>  
 
+  </div>  
 
-  <!-- =====================================================
-       STYLESHEET
-  ====================================================== -->
+  <div class="nav-actions">  
 
-  <link
-    rel="stylesheet"
-    href="css/style.css">
+    <button  
+      class="theme-btn"  
+      id="themeBtn"  
+      type="button"  
+      aria-label="Toggle dark mode">  
 
-</head>
+      🌙  
 
+    </button>  
 
-<body>
+    <button  
+      class="menu-btn"  
+      id="menuBtn"  
+      type="button"  
+      aria-label="Open navigation menu"  
+      aria-expanded="false">  
 
+      ☰  
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
+    </button>  
 
-  <header class="site-header">
+  </div>  
 
-    <nav class="navbar">
+</nav>
 
-      <a
-        href="#home"
-        class="logo"
-        aria-label="Waikiki Dev home">
+  </header>    <!-- =====================================================  
+       MAIN  
+  ====================================================== -->    <main>  <!-- ===================================================  
+     HERO  
+==================================================== -->  
 
-        Waikiki<span>Dev</span>
+<section  
+  class="hero"  
+  id="home">  
 
-      </a>
+  <div class="hero-container">  
 
+    <div class="hero-content">  
 
-      <div class="nav-links">
+      <div class="hero-badge">  
 
-        <a href="#home">
-          Home
-        </a>
+        <span class="status-dot"></span>  
 
-        <a href="#about">
-          About
-        </a>
+        Available for new projects  
 
-        <a href="#projects">
-          Projects
-        </a>
+      </div>  
 
-        <a href="#skills">
-          Skills
-        </a>
+      <p class="hero-greeting">  
+        Hi, I'm  
+      </p>  
 
-        <a href="#contact">
-          Contact
-        </a>
+      <h1>  
+        Waikiki Dev  
+        <span>Ace.</span>  
+      </h1>  
 
-      </div>
+      <h2>  
+        Front-End Developer  
+        <span>•</span>  
+        Vibe Coder  
+      </h2>  
 
+      <p class="hero-description">  
 
-      <div class="nav-actions">
+        I build modern, responsive, and interactive  
+        web experiences using code, creativity,  
+        and AI-assisted development.  
 
-        <button
-          class="theme-btn"
-          id="themeBtn"
-          type="button"
-          aria-label="Toggle dark mode">
+      </p>  
 
-          🌙
+      <div class="hero-actions">  
 
-        </button>
+        <a  
+          href="#projects"  
+          class="btn btn-primary">  
 
+          View My Work →  
 
-        <button
-          class="menu-btn"
-          id="menuBtn"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-expanded="false">
+        </a>  
 
-          ☰
+        <a  
+          href="#contact"  
+          class="btn btn-secondary">  
 
-        </button>
+          Contact Me  
 
-      </div>
+        </a>  
 
-    </nav>
+      </div>  
 
-  </header>
+      <div class="hero-links">  
 
+        <a  
+          href="https://github.com/waikiki-dev"  
+          target="_blank"  
+          rel="noopener noreferrer">  
 
+          GitHub ↗  
 
-  <!-- =====================================================
-       MAIN
-  ====================================================== -->
+        </a>  
 
-  <main>
+        <span>/</span>  
 
+        <a href="#about">  
+          About Me  
+        </a>  
 
-    <!-- ===================================================
-         HERO
-    ==================================================== -->
+      </div>  
 
-    <section
-      class="hero"
-      id="home">
+    </div>  
 
-      <div class="hero-container">
 
+    <!-- HERO CODE CARD -->  
 
-        <div class="hero-content">
+    <div class="hero-visual">  
 
-          <div class="hero-badge">
+      <div class="hero-card">  
 
-            <span class="status-dot"></span>
+        <div class="hero-card-top">  
+          <span></span>  
+          <span></span>  
+          <span></span>  
+        </div>  
 
-            Available for new projects
+        <div class="code-window">  
 
-          </div>
+          <div class="code-line">  
+            <span class="code-keyword">const</span>  
+            developer  
+            <span class="code-symbol">=</span>  
+            <span class="code-string">"Ace";</span>  
+          </div>  
 
+          <div class="code-line">  
+            <span class="code-keyword">const</span>  
+            approach  
+            <span class="code-symbol">=</span>  
+            <span class="code-string">"vibe coding";</span>  
+          </div>  
 
-          <p class="hero-greeting">
-            Hi, I'm
-          </p>
+          <div class="code-line">  
 
+            <span class="code-keyword">const</span>  
+            tools  
+            <span class="code-symbol">=</span>  
+            [  
 
-          <h1>
+            <span class="code-string">"HTML"</span>,  
 
-            Waikiki Dev
+            <span class="code-string">"CSS"</span>,  
 
-            <span>
-              Ace.
-            </span>
+            <span class="code-string">"JavaScript"</span>  
 
-          </h1>
+            ];  
 
+          </div>  
 
-          <h2>
-            Front-End Developer
-            <span>•</span>
-            Vibe Coder
-          </h2>
+          <br>  
 
+          <div class="code-line">  
 
-          <p class="hero-description">
+            <span class="code-keyword">function</span>  
+            <span class="code-function">build()</span>  
+            {  
 
-            I build modern, responsive, and interactive
-            web experiences using code, creativity,
-            and AI-assisted development.
+          </div>  
 
-          </p>
+          <div class="code-line code-indent">  
 
+            <span class="code-keyword">return</span>  
 
-          <div class="hero-actions">
+            <span class="code-string">  
+              "Create something awesome";  
+            </span>  
 
-            <a
-              href="#projects"
-              class="btn btn-primary">
+          </div>  
 
-              View My Work
-              →
+          <div class="code-line">  
+            }  
+          </div>  
 
-            </a>
+        </div>  
 
+        <div class="hero-card-footer">  
 
-            <a
-              href="#contact"
-              class="btn btn-secondary">
+          <span>●</span>  
 
-              Contact Me
+          Building something new...  
 
-            </a>
+        </div>  
 
-          </div>
+      </div>  
 
+    </div>  
 
-          <div class="hero-links">
+  </div>  
 
-            <a
-              href="https://github.com/waikiki-dev"
-              target="_blank"
-              rel="noopener noreferrer">
+</section>  
 
-              GitHub ↗
 
-            </a>
+<!-- ===================================================  
+     ABOUT  
+==================================================== -->  
 
+<section  
+  class="section about"  
+  id="about">  
 
-            <span>
-              /
-            </span>
+  <div class="section-container">  
 
+    <div class="section-heading">  
 
-            <a href="#about">
+      <span>ABOUT ME</span>  
 
-              About Me
+      <h2>  
+        Building ideas into  
+        <strong>real projects.</strong>  
+      </h2>  
 
-            </a>
+    </div>  
 
-          </div>
+    <div class="about-grid">  
 
-        </div>
+      <div class="about-text">  
 
+        <p>  
 
+          I'm Ace, the developer behind  
+          <strong>Waikiki Dev</strong>.  
 
-        <div class="hero-visual">
+          I enjoy turning ideas into modern  
+          websites and experimenting with  
+          different ways to make web development  
+          faster, cleaner, and more creative.  
 
-          <div class="hero-card">
+        </p>  
 
-            <div class="hero-card-top">
+        <p>  
 
-              <span></span>
-              <span></span>
-              <span></span>
+          My current focus is front-end development,  
+          responsive design, JavaScript, and  
+          AI-assisted development through  
+          <strong>vibe coding</strong>.  
 
-            </div>
+        </p>  
 
+        <p>  
 
-            <div class="code-window">
+          This portfolio documents my journey,  
+          projects, experiments, and the things  
+          I'm learning along the way.  
 
-              <div class="code-line">
+        </p>  
 
-                <span class="code-keyword">
-                  const
-                </span>
+      </div>  
 
-                developer
+      <div class="about-stats">  
 
-                <span class="code-symbol">
-                  =
-                </span>
+        <div class="stat-card">  
 
-                <span class="code-string">
-                  "Ace";
-                </span>
+          <strong>01</strong>  
 
-              </div>
+          <span>  
+            Featured Project  
+          </span>  
 
+        </div>  
 
-              <div class="code-line">
+        <div class="stat-card">  
 
-                <span class="code-keyword">
-                  const
-                </span>
+          <strong>03+</strong>  
 
-                approach
+          <span>  
+            Core Technologies  
+          </span>  
 
-                <span class="code-symbol">
-                  =
-                </span>
+        </div>  
 
-                <span class="code-string">
-                  "vibe coding";
-                </span>
+        <div class="stat-card">  
 
-              </div>
+          <strong>∞</strong>  
 
+          <span>  
+            Ideas to Build  
+          </span>  
 
-              <div class="code-line">
+        </div>  
 
-                <span class="code-keyword">
-                  const
-                </span>
+      </div>  
 
-                tools
+    </div>  
 
-                <span class="code-symbol">
-                  =
-                </span>
+  </div>  
 
-                [
+</section>  
 
-                <span class="code-string">
-                  "HTML"
-                </span>,
 
-                <span class="code-string">
-                  "CSS"
-                </span>,
+<!-- ===================================================  
+     VIBE CODING  
+==================================================== -->  
 
-                <span class="code-string">
-                  "JavaScript"
-                </span>
+<section class="section vibe-section">  
 
-                ];
+  <div class="section-container">  
 
-              </div>
+    <div class="section-heading center">  
 
+      <span>MY APPROACH</span>  
 
-              <br>
+      <h2>  
+        What is <strong>Vibe Coding?</strong>  
+      </h2>  
 
+      <p>  
+        My development workflow combines  
+        human creativity with AI-assisted coding.  
+      </p>  
 
-              <div class="code-line">
+    </div>  
 
-                <span class="code-keyword">
-                  function
-                </span>
+    <div class="workflow">  
 
-                <span class="code-function">
-                  build()
-                </span>
+      <div class="workflow-item">  
 
-                {
+        <div class="workflow-number">01</div>  
 
-              </div>
+        <h3>Idea</h3>  
 
+        <p>  
+          Start with a concept and define  
+          what I want to build.  
+        </p>  
 
-              <div class="code-line code-indent">
+      </div>  
 
-                <span class="code-keyword">
-                  return
-                </span>
+      <div class="workflow-arrow">→</div>  
 
-                <span class="code-string">
-                  "Create something awesome";
-                </span>
+      <div class="workflow-item">  
 
-              </div>
+        <div class="workflow-number">02</div>  
 
+        <h3>Build</h3>  
 
-              <div class="code-line">
+        <p>  
+          Use AI-assisted development to  
+          turn ideas into working code.  
+        </p>  
 
-                }
+      </div>  
 
-              </div>
+      <div class="workflow-arrow">→</div>  
 
-            </div>
+      <div class="workflow-item">  
 
+        <div class="workflow-number">03</div>  
 
-            <div class="hero-card-footer">
+        <h3>Improve</h3>  
 
-              <span>
-                ●
-              </span>
+        <p>  
+          Test, debug, experiment, and  
+          continuously improve the project.  
+        </p>  
 
-              Building something new...
+      </div>  
 
-            </div>
+      <div class="workflow-arrow">→</div>  
 
-          </div>
+      <div class="workflow-item">  
 
-        </div>
+        <div class="workflow-number">04</div>  
 
-      </div>
+        <h3>Launch</h3>  
 
-    </section>
+        <p>  
+          Deploy the finished project and  
+          share it with the world.  
+        </p>  
 
+      </div>  
 
+    </div>  
 
-    <!-- ===================================================
-         ABOUT
-    ==================================================== -->
+  </div>  
 
-    <section
-      class="section about"
-      id="about">
+</section>  
 
-      <div class="section-container">
 
+<!-- ===================================================  
+     PROJECTS  
+==================================================== -->  
 
-        <div class="section-heading">
+<section  
+  class="section projects"  
+  id="projects">  
 
-          <span>
-            ABOUT ME
-          </span>
+  <div class="section-container">  
 
-          <h2>
-            Building ideas into
-            <strong>real projects.</strong>
-          </h2>
+    <div class="section-heading">  
 
-        </div>
+      <span>MY WORK</span>  
 
+      <h2>  
+        Featured <strong>Project.</strong>  
+      </h2>  
 
-        <div class="about-grid">
+      <p>  
+        A collection of projects will appear here  
+        as I continue building.  
+      </p>  
 
+    </div>  
 
-          <div class="about-text">
 
-            <p>
+    <div class="project-grid">  
 
-              I'm Ace, the developer behind
-              <strong>Waikiki Dev</strong>.
 
-              I enjoy turning ideas into modern
-              websites and experimenting with
-              different ways to make web development
-              faster, cleaner, and more creative.
+      <!-- =================================================  
+           WAIKIKI MARKET PROJECT  
+      ================================================== -->  
 
-            </p>
+      <article class="project-card featured-project">  
 
+        <!--  
+          IMPORTANT:  
 
-            <p>
+          The image itself is changed by JavaScript.  
 
-              My current focus is front-end development,
-              responsive design, JavaScript, and
-              AI-assisted development through
-              <strong>vibe coding</strong>.
+          Light:  
+          assets/waikiki-market-light.jpg  
 
-            </p>
+          Dark:  
+          assets/waikiki-market-dark.jpg  
+        -->  
 
+        <div class="project-image">  
 
-            <p>
+          <img  
+            id="waikikiProjectImage"  
+            src="assets/waikiki-market-light.jpg"  
+            alt="Waikiki Market light mode screenshot"  
+            loading="lazy">  
 
-              This portfolio documents my journey,
-              projects, experiments, and the things
-              I'm learning along the way.
+        </div>  
 
-            </p>
 
-          </div>
+        <div class="project-content">  
 
+          <div class="project-meta">  
 
-          <div class="about-stats">
+            <span>  
+              E-COMMERCE  
+            </span>  
 
-            <div class="stat-card">
+            <span>  
+              2026  
+            </span>  
 
-              <strong>
-                01
-              </strong>
+          </div>  
 
-              <span>
-                Featured Project
-              </span>
 
-            </div>
+          <h3>  
+            Waikiki Market  
+          </h3>  
 
 
-            <div class="stat-card">
+          <p>  
 
-              <strong>
-                03+
-              </strong>
+            A modern responsive demo  
+            e-commerce website featuring  
+            product browsing, search,  
+            category filtering, shopping cart,  
+            dark mode, and a demo checkout  
+            experience.  
 
-              <span>
-                Core Technologies
-              </span>
+          </p>  
 
-            </div>
 
+          <div class="project-tech">  
 
-            <div class="stat-card">
+            <span>HTML</span>  
+            <span>CSS</span>  
+            <span>JavaScript</span>  
+            <span>Netlify</span>  
 
-              <strong>
-                ∞
-              </strong>
+          </div>  
 
-              <span>
-                Ideas to Build
-              </span>
 
-            </div>
+          <div class="project-actions">  
 
-          </div>
+            <a  
+              href="https://venerable-pithivier-03c209.netlify.app/"  
+              target="_blank"  
+              rel="noopener noreferrer"  
+              class="project-link primary">  
 
-        </div>
+              Live Demo ↗  
 
-      </div>
+            </a>  
 
-    </section>
 
+            <a  
+              href="https://github.com/waikiki-dev/Waikiki-Market"  
+              target="_blank"  
+              rel="noopener noreferrer"  
+              class="project-link">  
 
+              GitHub ↗  
 
-    <!-- ===================================================
-         VIBE CODING
-    ==================================================== -->
+            </a>  
 
-    <section
-      class="section vibe-section">
+          </div>  
 
-      <div class="section-container">
+        </div>  
 
+      </article>  
 
-        <div class="section-heading center">
 
-          <span>
-            MY APPROACH
-          </span>
+      <!-- =================================================  
+           FUTURE PROJECT  
+      ================================================== -->  
 
-          <h2>
-            What is <strong>Vibe Coding?</strong>
-          </h2>
+      <article class="project-card project-placeholder">  
 
-          <p>
+        <div class="placeholder-content">  
 
-            My development workflow combines
-            human creativity with AI-assisted coding.
+          <span class="placeholder-icon">  
+            ＋  
+          </span>  
 
-          </p>
+          <h3>  
+            More Projects Coming  
+          </h3>  
 
-        </div>
+          <p>  
 
+            New experiments, websites,  
+            and creative projects will be  
+            added here.  
 
-        <div class="workflow">
+          </p>  
 
+        </div>  
 
-          <div class="workflow-item">
+      </article>  
 
-            <div class="workflow-number">
-              01
-            </div>
+    </div>  
 
-            <h3>
-              Idea
-            </h3>
+  </div>  
 
-            <p>
-              Start with a concept and define
-              what I want to build.
-            </p>
+</section>  
 
-          </div>
 
+<!-- ===================================================  
+     SKILLS  
+==================================================== -->  
 
-          <div class="workflow-arrow">
-            →
-          </div>
+<section  
+  class="section skills"  
+  id="skills">  
 
+  <div class="section-container">  
 
-          <div class="workflow-item">
+    <div class="section-heading center">  
 
-            <div class="workflow-number">
-              02
-            </div>
+      <span>SKILLS</span>  
 
-            <h3>
-              Build
-            </h3>
+      <h2>  
+        Tools I <strong>Build With.</strong>  
+      </h2>  
 
-            <p>
-              Use AI-assisted development to
-              turn ideas into working code.
-            </p>
+    </div>  
 
-          </div>
+    <div class="skills-grid">  
 
+      <div class="skill-card">  
 
-          <div class="workflow-arrow">
-            →
-          </div>
+        <div class="skill-icon">  
+          &lt;/&gt;  
+        </div>  
 
+        <h3>HTML5</h3>  
 
-          <div class="workflow-item">
+        <p>  
+          Semantic and structured web pages.  
+        </p>  
 
-            <div class="workflow-number">
-              03
-            </div>
+      </div>  
 
-            <h3>
-              Improve
-            </h3>
 
-            <p>
-              Test, debug, experiment, and
-              continuously improve the project.
-            </p>
+      <div class="skill-card">  
 
-          </div>
+        <div class="skill-icon">  
+          #  
+        </div>  
 
+        <h3>CSS3</h3>  
 
-          <div class="workflow-arrow">
-            →
-          </div>
+        <p>  
+          Responsive layouts and modern interfaces.  
+        </p>  
 
+      </div>  
 
-          <div class="workflow-item">
 
-            <div class="workflow-number">
-              04
-            </div>
+      <div class="skill-card">  
 
-            <h3>
-              Launch
-            </h3>
+        <div class="skill-icon">  
+          JS  
+        </div>  
 
-            <p>
-              Deploy the finished project and
-              share it with the world.
-            </p>
+        <h3>JavaScript</h3>  
 
-          </div>
+        <p>  
+          Interactive functionality and web logic.  
+        </p>  
 
-        </div>
+      </div>  
 
-      </div>
 
-    </section>
+      <div class="skill-card">  
 
+        <div class="skill-icon">  
+          AI  
+        </div>  
 
+        <h3>AI-Assisted Development</h3>  
 
-    <!-- ===================================================
-         PROJECTS
-    ==================================================== -->
+        <p>  
+          Using AI as a development partner.  
+        </p>  
 
-    <section
-      class="section projects"
-      id="projects">
+      </div>  
 
-      <div class="section-container">
 
+      <div class="skill-card">  
 
-        <div class="section-heading">
+        <div class="skill-icon">  
+          UI  
+        </div>  
 
-          <span>
-            MY WORK
-          </span>
+        <h3>UI / UX</h3>  
 
-          <h2>
-            Featured <strong>Project.</strong>
-          </h2>
+        <p>  
+          Clean and user-friendly interfaces.  
+        </p>  
 
-          <p>
-            A collection of projects will appear here
-            as I continue building.
-          </p>
+      </div>  
 
-        </div>
 
+      <div class="skill-card">  
 
-        <div class="project-grid">
+        <div class="skill-icon">  
+          ↗  
+        </div>  
 
+        <h3>Deployment</h3>  
 
-          <!-- =============================================
-               WAIKIKI MARKET
-          ============================================== -->
+        <p>  
+          Publishing projects to the web.  
+        </p>  
 
-          <article class="project-card featured-project">
+      </div>  
 
+    </div>  
 
-            <div class="project-image">
+  </div>  
 
-              <div class="project-image-content">
+</section>  
 
-                <span class="project-label">
-                  FEATURED PROJECT
-                </span>
 
-                <div class="project-brand">
+<!-- ===================================================  
+     CONTACT  
+==================================================== -->  
 
-                  Waikiki
-                  <span>
-                    Market
-                  </span>
+<section  
+  class="section contact"  
+  id="contact">  
 
-                </div>
+  <div class="section-container">  
 
-                <p>
-                  Modern Demo E-Commerce Website
-                </p>
+    <div class="contact-card">  
 
-              </div>
+      <div class="contact-content">  
 
-            </div>
+        <span>GET IN TOUCH</span>  
 
+        <h2>  
+          Let's build something  
+          <strong>interesting.</strong>  
+        </h2>  
 
-            <div class="project-content">
+        <p>  
 
-              <div class="project-meta">
+          Have an idea, project, or just want  
+          to connect? Feel free to reach out.  
 
-                <span>
-                  E-COMMERCE
-                </span>
+        </p>  
 
-                <span>
-                  2026
-                </span>
+        <div class="contact-actions">  
 
-              </div>
+          <a  
+            href="mailto:waikiki.mod@gmail.com"  
+            class="btn btn-primary">  
 
+            Email Me →  
 
-              <h3>
-                Waikiki Market
-              </h3>
+          </a>  
 
+          <a  
+            href="https://github.com/waikiki-dev"  
+            target="_blank"  
+            rel="noopener noreferrer"  
+            class="btn btn-secondary">  
 
-              <p>
+            GitHub ↗  
 
-                A modern responsive demo
-                e-commerce website featuring
-                product browsing, search,
-                category filtering, shopping cart,
-                dark mode, and a demo checkout
-                experience.
+          </a>  
 
-              </p>
+        </div>  
 
+      </div>  
 
-              <div class="project-tech">
 
-                <span>
-                  HTML
-                </span>
+      <div class="contact-info">  
 
-                <span>
-                  CSS
-                </span>
+        <div>  
 
-                <span>
-                  JavaScript
-                </span>
+          <span>EMAIL</span>  
 
-                <span>
-                  Netlify
-                </span>
+          <a href="mailto:waikiki.mod@gmail.com">  
+            waikiki.mod@gmail.com  
+          </a>  
 
-              </div>
+        </div>  
 
 
-              <div class="project-actions">
+        <div>  
 
-                <a
-                  href="https://venerable-pithivier-03c209.netlify.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link primary">
+          <span>GITHUB</span>  
 
-                  Live Demo
-                  ↗
+          <a  
+            href="https://github.com/waikiki-dev"  
+            target="_blank"  
+            rel="noopener noreferrer">  
 
-                </a>
+            github.com/waikiki-dev  
 
+          </a>  
 
-                <a
-                  href="https://github.com/waikiki-dev/Waikiki-Market"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link">
+        </div>  
 
-                  GitHub
-                  ↗
+      </div>  
 
-                </a>
+    </div>  
 
-              </div>
+  </div>  
 
-            </div>
+</section>
 
-          </article>
+  </main>    <!-- =====================================================  
+       FOOTER  
+  ====================================================== -->    <footer class="site-footer">  <div class="footer-container">  
 
+  <div class="footer-brand">  
 
+    Waikiki<span>Dev</span>  
 
-          <!-- =============================================
-               FUTURE PROJECT
-          ============================================== -->
+    <p>  
+      Build. Learn. Improve. Create.  
+    </p>  
 
-          <article class="project-card project-placeholder">
+  </div>  
 
 
-            <div class="placeholder-content">
+  <div class="footer-links">  
 
-              <span class="placeholder-icon">
-                ＋
-              </span>
+    <a href="#home">Home</a>  
 
+    <a href="#projects">Projects</a>  
 
-              <h3>
-                More Projects Coming
-              </h3>
+    <a href="#contact">Contact</a>  
 
+    <a  
+      href="https://github.com/waikiki-dev"  
+      target="_blank"  
+      rel="noopener noreferrer">  
 
-              <p>
+      GitHub ↗  
 
-                New experiments, websites,
-                and creative projects will be
-                added here.
+    </a>  
 
-              </p>
+  </div>  
 
-            </div>
 
-          </article>
+  <div class="footer-bottom">  
 
-        </div>
+    <p>  
+      © <span data-current-year>2026</span>  
+      Waikiki Dev — Ace  
+    </p>  
 
-      </div>
+    <p>  
+      Built with HTML, CSS, JavaScript & AI-assisted development.  
+    </p>  
 
-    </section>
+  </div>  
 
+</div>
 
-
-    <!-- ===================================================
-         SKILLS
-    ==================================================== -->
-
-    <section
-      class="section skills"
-      id="skills">
-
-      <div class="section-container">
-
-
-        <div class="section-heading center">
-
-          <span>
-            SKILLS
-          </span>
-
-          <h2>
-            Tools I <strong>Build With.</strong>
-          </h2>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              &lt;/&gt;
-            </div>
-
-            <h3>
-              HTML5
-            </h3>
-
-            <p>
-              Semantic and structured web pages.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              #
-            </div>
-
-            <h3>
-              CSS3
-            </h3>
-
-            <p>
-              Responsive layouts and modern interfaces.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              JS
-            </div>
-
-            <h3>
-              JavaScript
-            </h3>
-
-            <p>
-              Interactive functionality and web logic.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              AI
-            </div>
-
-            <h3>
-              AI-Assisted Development
-            </h3>
-
-            <p>
-              Using AI as a development partner.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              UI
-            </div>
-
-            <h3>
-              UI / UX
-            </h3>
-
-            <p>
-              Clean and user-friendly interfaces.
-            </p>
-
-          </div>
-
-
-          <div class="skill-card">
-
-            <div class="skill-icon">
-              ↗
-            </div>
-
-            <h3>
-              Deployment
-            </h3>
-
-            <p>
-              Publishing projects to the web.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ===================================================
-         CONTACT
-    ==================================================== -->
-
-    <section
-      class="section contact"
-      id="contact">
-
-      <div class="section-container">
-
-
-        <div class="contact-card">
-
-
-          <div class="contact-content">
-
-            <span>
-              GET IN TOUCH
-            </span>
-
-
-            <h2>
-              Let's build something
-              <strong>interesting.</strong>
-            </h2>
-
-
-            <p>
-
-              Have an idea, project, or just want
-              to connect? Feel free to reach out.
-
-            </p>
-
-
-            <div class="contact-actions">
-
-              <a
-                href="mailto:waikiki.mod@gmail.com"
-                class="btn btn-primary">
-
-                Email Me
-                →
-
-              </a>
-
-
-              <a
-                href="https://github.com/waikiki-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-secondary">
-
-                GitHub
-                ↗
-
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <div class="contact-info">
-
-            <div>
-
-              <span>
-                EMAIL
-              </span>
-
-              <a href="mailto:waikiki.mod@gmail.com">
-
-                waikiki.mod@gmail.com
-
-              </a>
-
-            </div>
-
-
-            <div>
-
-              <span>
-                GITHUB
-              </span>
-
-              <a
-                href="https://github.com/waikiki-dev"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                github.com/waikiki-dev
-
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer class="site-footer">
-
-    <div class="footer-container">
-
-
-      <div class="footer-brand">
-
-        Waikiki<span>Dev</span>
-
-        <p>
-          Build. Learn. Improve. Create.
-        </p>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#projects">
-          Projects
-        </a>
-
-        <a href="#contact">
-          Contact
-        </a>
-
-        <a
-          href="https://github.com/waikiki-dev"
-          target="_blank"
-          rel="noopener noreferrer">
-
-          GitHub ↗
-
-        </a>
-
-      </div>
-
-
-      <div class="footer-bottom">
-
-        <p>
-          © 2026 Waikiki Dev — Ace
-        </p>
-
-        <p>
-          Built with HTML, CSS, JavaScript & AI-assisted development.
-        </p>
-
-      </div>
-
-    </div>
-
-  </footer>
-
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
-  <script
-    src="js/script.js">
-  </script>
-
-
-</body>
+  </footer>    <script src="js/script.js"></script>  </body>  
 </html>
